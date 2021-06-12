@@ -1,5 +1,4 @@
 ﻿using AuthDemo.Front.Services;
-using Microsoft.Owin.Security.Cookies;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -62,10 +61,7 @@ namespace AuthDemo.Front.Controllers
 				return Ok(res);
 			}
 
-
 			return Ok(new { res = false });
 		}
 	}
-
-	
 }

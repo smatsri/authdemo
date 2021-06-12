@@ -1,10 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
-using System.Threading.Tasks;
 
 namespace AuthDemo.MyService.Controllers
 {
@@ -20,10 +17,8 @@ namespace AuthDemo.MyService.Controllers
 
 			var res = new
 			{
-				message = $"welcome home, {User.Identity.Name}",
 				claims,
-				name,
-				nameType = identity.NameClaimType
+				name
 			};
 			return Ok(res);
 		}
