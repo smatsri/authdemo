@@ -7,7 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthDemo.Front", "AuthDemo.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthDemo.Gateway", "AuthDemo.Gateway\AuthDemo.Gateway.csproj", "{8F7625A1-38F8-4343-806C-26046A944EF2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthDemo.MyService", "AuthDemo.MyService\AuthDemo.MyService.csproj", "{B52DE52B-DBB4-4BEA-AE47-51FF6B5A6728}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthDemo.MyService", "AuthDemo.MyService\AuthDemo.MyService.csproj", "{B52DE52B-DBB4-4BEA-AE47-51FF6B5A6728}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{08C1D82C-C8AD-413A-A065-2AE557FCB9DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JwtAuthentication", "JwtAuthentication\JwtAuthentication.csproj", "{AEF44E89-9DD0-4BFF-BE27-D9F62A4CD8F2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,9 +31,16 @@ Global
 		{B52DE52B-DBB4-4BEA-AE47-51FF6B5A6728}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B52DE52B-DBB4-4BEA-AE47-51FF6B5A6728}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B52DE52B-DBB4-4BEA-AE47-51FF6B5A6728}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AEF44E89-9DD0-4BFF-BE27-D9F62A4CD8F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEF44E89-9DD0-4BFF-BE27-D9F62A4CD8F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEF44E89-9DD0-4BFF-BE27-D9F62A4CD8F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEF44E89-9DD0-4BFF-BE27-D9F62A4CD8F2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AEF44E89-9DD0-4BFF-BE27-D9F62A4CD8F2} = {08C1D82C-C8AD-413A-A065-2AE557FCB9DC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CAEE191F-433F-432E-91EA-2E888A523382}

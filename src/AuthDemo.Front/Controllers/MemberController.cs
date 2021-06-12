@@ -2,6 +2,7 @@
 using Microsoft.Owin.Security.Cookies;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Security.Claims;
 using System.Web;
 using System.Web.Http;
@@ -32,20 +33,33 @@ namespace AuthDemo.Front.Controllers
 
 
 			var success = Membership.ValidateUser(username, password);
-			//var success = Members.GetByUsername(username);
 
 			if (success)
 			{
+				///TODO: use model builder to work with strongly typed Member type 
+				///      get member from umbraco
+				///      and add first,last name
+
 				var claims = new List<Claim> {
-					new Claim(ClaimTypes.Name, username),
-					new Claim(ClaimTypes.NameIdentifier, username)
+					new Claim(ClaimTypes.Name, username)
 				};
 
 				var token = jwtAuthenticationManager.CreateToken(claims);
-				var authCookie = new HttpCookie("Auth", token);
+				var authCookie = new HttpCookie("Auth", token)
+				{
+					HttpOnly = true,
+					Expires = DateTime.Now.AddDays(1),
+					SameSite = SameSiteMode.Lax
+				};
+
 				HttpContext.Current.Response.SetCookie(authCookie);
 
-				return Ok("you are logged in");
+				var res = new
+				{
+					claims = claims.Select(a=> new { a.Value, a.Type })
+				};
+
+				return Ok(res);
 			}
 
 

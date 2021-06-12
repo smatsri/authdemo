@@ -1,7 +1,7 @@
 {
   "Routes": [
     {
-      "DownstreamPathTemplate": "/WeatherForecast",
+      "DownstreamPathTemplate": "/api/{rest}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -9,7 +9,7 @@
           "Port": 80
         }
       ],
-      "UpstreamPathTemplate": "/WeatherForecast",
+      "UpstreamPathTemplate": "/api/my/{rest}",
       "UpstreamHttpMethod": [ "Get" ]
     },
     {

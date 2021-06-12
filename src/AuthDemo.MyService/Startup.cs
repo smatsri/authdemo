@@ -1,3 +1,5 @@
+//using AuthDemo.MyService.Auth;
+//using AuthDemo.MyService.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -10,6 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using JwtAuthentication;
 
 namespace AuthDemo.MyService
 {
@@ -22,10 +25,19 @@ namespace AuthDemo.MyService
 
 		public IConfiguration Configuration { get; }
 
-		// This method gets called by the runtime. Use this method to add services to the container.
 		public void ConfigureServices(IServiceCollection services)
 		{
+			var tokenSeacret = Configuration["Jwt:Seacret"];
+			var authCookieName = Configuration["Jwt:CookieName"];
 
+			services.AddJwtAuthentication(new JwtTokenOptions(tokenSeacret, authCookieName));
+			//var jwtTokenService = new JwtTokenService(new JwtTokenOptions(tokenSeacret));
+
+			//services.AddSingleton(jwtTokenService);
+
+			//services.AddAuthentication("Jwt")
+			//	.AddScheme<JwtAuthenticationOptions, JwtAuthenticationHandler>("Jwt", null);
+			services.AddAuthorization();
 			services.AddControllers();
 			services.AddSwaggerGen(c =>
 			{
@@ -33,7 +45,6 @@ namespace AuthDemo.MyService
 			});
 		}
 
-		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
 		public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 		{
 			if (env.IsDevelopment())
@@ -45,6 +56,7 @@ namespace AuthDemo.MyService
 
 			app.UseRouting();
 
+			app.UseAuthentication();
 			app.UseAuthorization();
 
 			app.UseEndpoints(endpoints =>
