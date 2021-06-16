@@ -39,7 +39,7 @@ namespace JwtAuthentication
 				claims = jwtToken.Claims;
 				return true;
 			}
-			catch(Exception ex)
+			catch//(Exception _)
 			{
 				claims = null;
 				return false;

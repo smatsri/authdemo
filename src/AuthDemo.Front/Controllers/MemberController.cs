@@ -1,6 +1,7 @@
 ﻿using AuthDemo.Front.Services;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Security.Claims;
 using System.Web;
@@ -18,10 +19,11 @@ namespace AuthDemo.Front.Controllers
 		{
 			this.jwtAuthenticationManager = jwtAuthenticationManager;
 		}
+
 		[HttpGet]
 		public IHttpActionResult IsAuthenticated()
 		{
-			return Ok(new { res = false });
+			return Ok(new { res = User.Identity.IsAuthenticated });
 		}
 
 		[HttpGet]
@@ -44,7 +46,8 @@ namespace AuthDemo.Front.Controllers
 				};
 
 				var token = jwtAuthenticationManager.CreateToken(claims);
-				var authCookie = new HttpCookie("Auth", token)
+				var cookieName = ConfigurationManager.AppSettings["auth:CookieName"];
+				var authCookie = new HttpCookie(cookieName, token)
 				{
 					HttpOnly = true,
 					Expires = DateTime.Now.AddDays(1),

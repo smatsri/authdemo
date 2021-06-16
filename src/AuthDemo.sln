@@ -11,7 +11,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthDemo.MyService", "AuthD
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{08C1D82C-C8AD-413A-A065-2AE557FCB9DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JwtAuthentication", "JwtAuthentication\JwtAuthentication.csproj", "{AEF44E89-9DD0-4BFF-BE27-D9F62A4CD8F2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JwtAuthentication", "JwtAuthentication\JwtAuthentication.csproj", "{AEF44E89-9DD0-4BFF-BE27-D9F62A4CD8F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JwtAuthentication4", "JwtAuthentication4\JwtAuthentication4.csproj", "{E45C9C5A-F63E-410A-8B66-BF105B8E6DD2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C5364E4C-4DBF-48D0-99AC-9D9DBAB608E7}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,12 +42,17 @@ Global
 		{AEF44E89-9DD0-4BFF-BE27-D9F62A4CD8F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AEF44E89-9DD0-4BFF-BE27-D9F62A4CD8F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AEF44E89-9DD0-4BFF-BE27-D9F62A4CD8F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E45C9C5A-F63E-410A-8B66-BF105B8E6DD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E45C9C5A-F63E-410A-8B66-BF105B8E6DD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E45C9C5A-F63E-410A-8B66-BF105B8E6DD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E45C9C5A-F63E-410A-8B66-BF105B8E6DD2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{AEF44E89-9DD0-4BFF-BE27-D9F62A4CD8F2} = {08C1D82C-C8AD-413A-A065-2AE557FCB9DC}
+		{E45C9C5A-F63E-410A-8B66-BF105B8E6DD2} = {08C1D82C-C8AD-413A-A065-2AE557FCB9DC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CAEE191F-433F-432E-91EA-2E888A523382}

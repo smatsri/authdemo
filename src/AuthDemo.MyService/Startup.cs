@@ -19,10 +19,10 @@ namespace AuthDemo.MyService
 
 		public void ConfigureServices(IServiceCollection services)
 		{
-			var tokenSeacret = Configuration["Jwt:Seacret"];
+			var tokenSecret = Configuration["Jwt:Secret"];
 			var authCookieName = Configuration["Jwt:CookieName"];
 
-			services.AddJwtAuthentication(new JwtTokenOptions(tokenSeacret, authCookieName));
+			services.AddJwtAuthentication(new JwtTokenOptions(tokenSecret, authCookieName));
 			services.AddAuthorization();
 			services.AddControllers();
 			services.AddSwaggerGen(c =>

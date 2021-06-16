@@ -23,6 +23,18 @@
       ],
       "UpstreamPathTemplate": "/api/member/{reset}",
       "UpstreamHttpMethod": [ "Get", "POST" ]
+    },
+    {
+      "DownstreamPathTemplate": "/umbraco/surface/test/t1",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "front.authdemo.com",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/api/isAuth",
+      "UpstreamHttpMethod": [ "Get" ]
     }
   ],
   "GlobalConfiguration": {
